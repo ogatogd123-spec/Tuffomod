@@ -1,0 +1,35 @@
+{
+  "geode": "5.0.0",
+  "gd": {
+    "win": "2.2091",
+    "mac": "2.2091",
+    "ios": "2.2091",
+    "android": "2.2091"
+  },
+  "id": "tuffo.mod",
+  "name": "Tuffo Mod",
+  "version": "1.0.0",
+  "developer": "Tuffo",
+  "description": "Menu personalizado e opções rápidas para Geometry Dash.",
+  "tags": ["utility"],
+  "settings": {
+    "show-menu-button": {
+      "name": "Mostrar botão do Tuffo",
+      "description": "Mostra o botão do Tuffo no menu principal.",
+      "type": "bool",
+      "default": true
+    },
+    "custom-interface": {
+      "name": "Interface personalizada",
+      "description": "Ativa os elementos visuais do Tuffo Mod.",
+      "type": "bool",
+      "default": true
+    },
+    "quick-options": {
+      "name": "Opções rápidas",
+      "description": "Ativa as opções rápidas do menu do Tuffo.",
+      "type": "bool",
+      "default": true
+    }
+  }
+}
