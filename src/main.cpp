@@ -25,7 +25,7 @@ class $modify(TuffoMenuLayer, MenuLayer) {
 
     void onTuffo(CCObject*) {
         FLAlertLayer::create(
-            "Tuffo Mod",
+            "Tuffo Menu",
             "Bem-vindo ao Tuffo Mod!FEITO POR IA",
             "OK"
         )->show();
