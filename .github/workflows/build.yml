@@ -1,0 +1,30 @@
+
+name: Build Tuffo Mod
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar arquivos
+        uses: actions/checkout@v4
+
+      - name: Compilar para Android 64-bit
+        id: build
+        uses: geode-sdk/build-geode-mod@main
+        with:
+          sdk: latest
+          target: Android64
+
+      - name: Salvar arquivo GEODE
+        uses: actions/upload-artifact@v4
+        with:
+          name: TuffoMod-Android64
+          path: ${{ steps.build.outputs.build-output }}/*.geode
+          
