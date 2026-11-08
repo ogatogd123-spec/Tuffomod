@@ -1,43 +1,48 @@
 
-#include <Geode/Geode.hpp>
-#include <Geode/modify/PlayLayer.hpp>
-
-using namespace geode::prelude;
-
-class $modify(TuffoPlayLayer, PlayLayer) {
-    void onEnter() {
-        PlayLayer::onEnter();
-
-        auto winSize = CCDirector::get()->getWinSize();
-
-        auto menu = CCMenu::create();
-        menu->setPosition({0, 0});
-
-        auto button = CCMenuItemSpriteExtra::create(
-            ButtonSprite::create("TUFFO"),
-            this,
-            menu_selector(TuffoPlayLayer::onTuffo)
-        );
-
-        button->setPosition({
-            winSize.width - 55.f,
-            winSize.height * 0.55f
-        });
-
-        menu->addChild(button);
-        this->addChild(menu, 9999);
+{
+  "geode": "6.0.0-alpha.1",
+  "gd": {
+    "win": "2.2091",
+    "mac": "2.2091",
+    "ios": "2.2091",
+    "android": "2.2091"
+  },
+  "id": "tuffo.mod",
+  "name": "Tuffo Mod",
+  "version": "1.0.0",
+  "developer": "Chat GPT",
+  "description": "Mod Menu personalizado para Geometry Dash.",
+  "tags": ["utility"],
+  "settings": {
+    "show-menu-button": {
+      "name": "Botão TUFFO",
+      "type": "bool",
+      "default": true
+    },
+    "custom-interface": {
+      "name": "Interface personalizada",
+      "type": "bool",
+      "default": true
+    },
+    "quick-options": {
+      "name": "Opções rápidas",
+      "type": "bool",
+      "default": true
+    },
+    "show-fps": {
+      "name": "Mostrar FPS",
+      "type": "bool",
+      "default": false
+    },
+    "show-attempts": {
+      "name": "Contador de tentativas",
+      "type": "bool",
+      "default": true
+    },
+    "visual-effects": {
+      "name": "Efeitos visuais",
+      "type": "bool",
+      "default": true
     }
-
-    void onTuffo(CCObject*) {
-        FLAlertLayer::create(
-            "TUFFO MOD",
-            "Bem-vindo ao Mod Menu!\n\n"
-            "PLAYER - Personalizacao\n"
-            "GAMEPLAY - Opcoes de jogo\n"
-            "INTERFACE - Aparencia\n"
-            "MISC - Outras opcoes",
-            "FECHAR"
-        )->show();
-    }
-};
-
+  }
+}
